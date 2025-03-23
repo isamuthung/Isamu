@@ -104,3 +104,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+let quotes = [];
+
+// Load quotes from JSON file
+fetch('/assets/data/quotes.json')
+  .then(response => response.json())
+  .then(data => {
+    quotes = data;
+  })
+  .catch(error => {
+    console.error("Error loading quotes:", error);
+  });
+
+// Function to show a random quote
+function showRandomQuote() {
+  if (quotes.length === 0) return;
+
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const quoteElement = document.getElementById('quote-text');
+  if (quoteElement) {
+    quoteElement.textContent = quotes[randomIndex];
+  }
+}
+
+// Hook into hamburger toggle
+const hamburger = document.getElementById('sidebarToggle'); // Change if your hamburger has a different ID/class
+
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    showRandomQuote();
+  });
+}
