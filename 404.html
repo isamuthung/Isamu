@@ -3,15 +3,19 @@ layout: default
 permalink: /404.html
 ---
 
-<div class="error-container">
-  <h1>404</h1>
-  <h2>Page Not Found</h2>
-  
-  <p>We couldn't find the page you were looking for. This is either because:</p>
-  
-  <ul>
-    <li>There is an error in the URL entered into your web browser. Please check the URL and try again.</li>
-    <li>The page you are looking for has been moved or deleted.</li>
-  </ul>
-    
+<link rel="stylesheet" href="/assets/css/404.css" />
+
+<div class="error-wrapper">
+  <div class="error-content">
+    <h1>404</h1>
+    <p>Page not found</p>
+
+    <div class="animation-loop">
+      <div class="dot"></div>
+    </div>
+
+    <a href="/" class="home-link">← Back to home</a>
+  </div>
 </div>
+
+<script src="/assets/js/404.js"></script>
