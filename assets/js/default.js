@@ -157,3 +157,9 @@ if (hamburger) {
     showRandomQuote();
   });
 }
+
+// Add this to your existing JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Set current year in copyright text
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+});
