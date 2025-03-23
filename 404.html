@@ -2,8 +2,7 @@
 layout: default
 permalink: /404.html
 ---
-
-<link rel="stylesheet" href="/assets/css/404.css" />
+<link rel="stylesheet" href="{{ '/assets/css/404.css' | relative_url }}">
 
 <div class="error-wrapper">
   <div class="error-content">
@@ -21,4 +20,4 @@ permalink: /404.html
   </div>
 </div>
 
-<script src="/assets/js/404.js"></script>
+<script src="{{ '/assets/js/404.js' | relative_url }}"></script>
