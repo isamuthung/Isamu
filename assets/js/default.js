@@ -104,33 +104,54 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
 let quotes = [];
+let unusedQuotes = [];
 
 // Load quotes from JSON file
 fetch('/assets/data/quotes.json')
   .then(response => response.json())
   .then(data => {
     quotes = data;
+    unusedQuotes = [...quotes]; // Initialize unused quote pool
   })
   .catch(error => {
     console.error("Error loading quotes:", error);
   });
 
-// Function to show a random quote
+// Function to get a non-repeating random quote
+function getRandomNonRepeatingQuote() {
+  if (unusedQuotes.length === 0) {
+    unusedQuotes = [...quotes]; // Reset once all used
+  }
+
+  const randomIndex = Math.floor(Math.random() * unusedQuotes.length);
+  const quote = unusedQuotes[randomIndex];
+
+  // Remove used quote from the pool
+  unusedQuotes.splice(randomIndex, 1);
+
+  return quote;
+}
+
+// Function to show the quote with fade animation
 function showRandomQuote() {
   if (quotes.length === 0) return;
 
-  const randomIndex = Math.floor(Math.random() * quotes.length);
   const quoteElement = document.getElementById('quote-text');
-  if (quoteElement) {
-    quoteElement.textContent = quotes[randomIndex];
-  }
+  if (!quoteElement) return;
+
+  // Fade out
+  quoteElement.classList.add('fade-out');
+
+  // Wait for fade-out transition, then change text and fade back in
+  setTimeout(() => {
+    quoteElement.textContent = getRandomNonRepeatingQuote();
+    quoteElement.classList.remove('fade-out');
+  }, 500); // Match this to the CSS transition duration
 }
 
 // Hook into hamburger toggle
-const hamburger = document.getElementById('sidebarToggle'); // Change if your hamburger has a different ID/class
-
+const hamburger = document.getElementById('sidebarToggle'); // Update ID if needed
 if (hamburger) {
   hamburger.addEventListener('click', () => {
     showRandomQuote();
