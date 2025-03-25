@@ -42,17 +42,19 @@ body {
 
 .sidebar-description {
     font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    line-height: 1.4;
+    font-size: 1.8rem; /* Slightly smaller than before */
+    line-height: 1.5;
     color: #ffffff;
     text-align: left;
-    max-width: 800px;
-    padding-left: 40px; /* Align with nav links */
+    max-width: 600px; /* Limit width to control line breaks */
+    padding-left: 20px; /* Reduced left padding */
 }
 
 .sidebar-contact {
-    font-size: 1rem;
-    opacity: 0.8;
+    display: flex;
+    gap: 20px;
+    padding-left: 20px; /* Matching the description's left padding */
+    margin-top: 20px;
 }
 
 .contact-link {
@@ -101,8 +103,8 @@ body {
 .nav-links-contact {
     color: #ffffff;
     text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 300;
+    font-size: 1.4rem; /* Slightly larger font size */
+    font-weight: 600; /* Slightly bolder */
     position: relative;
     display: inline-block;
     transition: opacity 0.3s ease;
