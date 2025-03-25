@@ -108,7 +108,7 @@ let quotes = [];
 let unusedQuotes = [];
 
 // Load quotes from JSON file
-fetch('/assets/data/quotes.json')
+fetch('Isamu/assets/data/quotes.json')
   .then(response => response.json())
   .then(data => {
     quotes = data;
