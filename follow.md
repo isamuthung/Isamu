@@ -1,8 +1,8 @@
 ---
 layout: default
-permalink: /follow-me/
+permalink: /follow/
 ---
-<link rel="stylesheet" href="{{ '/assets/css/follow-me.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/follow.css' | relative_url }}">
 <div class="follow-me-wrapper">
   <div class="social-icons">
     <a href="mailto:isamuthung@gmail.com" class="social-icon gmail" aria-label="Email">
@@ -27,4 +27,4 @@ permalink: /follow-me/
     </a>
   </div>
 </div>
-<script src="{{ '/assets/js/follow-me.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/follow.js' | relative_url }}"></script>
