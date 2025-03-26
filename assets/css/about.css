@@ -36,7 +36,7 @@
 .about-hello-container {
     display: grid;
     grid-template-columns: minmax(150px, 1fr) minmax(300px, 3fr);
-    gap: 25%;
+    gap: 30%;
     margin-bottom: 80px;
     margin-left: 0;
     align-items: flex-start;
@@ -44,7 +44,7 @@
 
 /* Hello heading styling */
 .about-content h1 {
-    font-size: 3rem;
+    font-size: 2.7rem;
     font-family: "Times New Roman", Times, serif;
     font-weight: 400;
     color: #333;
@@ -95,16 +95,16 @@
 .about-section {
     display: grid;
     grid-template-columns: minmax(150px, 1fr) minmax(300px, 3fr);
-    gap: 25%;
+    gap: 30%;
     margin-bottom: 80px;
     margin-left: 0;
 }
 
 .about-content h2 {
-    font-size: 1.4rem;
+    font-size: 2rem;
     font-weight: 400;
     font-family: "Times New Roman", Times, serif;
-    color: #666;
+    color: #2c463c;
     margin-bottom: 20px;
     margin-top: 0;
 }
@@ -115,8 +115,9 @@
     line-height: 1.8;
     margin-bottom: 10px;
     font-family: "Times New Roman", Times, serif;
-    color: #666;
+    color: #2c463c;
 }
+
 
 /* Special styling for fancy text */
 .about-fancy-text {
