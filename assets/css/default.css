@@ -1,8 +1,131 @@
 /* Reset and Base Styles */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    line-height: 1.6;
+}
+
+
+/* Portfolio Grid Layout */
+.portfolio-container {
+    width: calc(100% - 80px); /* Subtracts sidebar width */
+    margin-left: 80px; /* Ensures content starts at the right of sidebar */
+    padding: 0;
+    max-width: 100%;
+}
+
+/* Ensuring grid alignment */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .portfolio-container {
+        width: 100%; /* Full width for smaller screens */
+        margin-left: 0; /* Sidebar likely collapses or moves */
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+    
+    .portfolio-title {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* Portfolio Items */
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.portfolio-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.portfolio-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-decoration: none;
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Overlay Effect */
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-title {
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    padding: 20px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.portfolio-link:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-link:hover .portfolio-title {
+    transform: translateY(0);
+}
+
+.portfolio-link:hover .portfolio-image {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  
+    
+    .portfolio-title {
+        font-size: 1.2rem;
+    }
 }
 
 :root {
@@ -273,25 +396,4 @@ body {
 
     
   
-}
-
-/* Portfolio Grid (Optional, based on your previous CSS) */
-.portfolio-container {
-    width: calc(100% - 80px);
-    margin-left: 80px;
-    padding: 0;
-    max-width: 100%;
-}
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
-    width: 100%;
-}
-
-@media (max-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
 }
