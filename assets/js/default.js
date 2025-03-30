@@ -105,16 +105,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Hook into hamburger toggle
-const hamburger = document.getElementById('sidebarToggle'); // Update ID if needed
-if (hamburger) {
-  hamburger.addEventListener('click', () => {
-    showRandomQuote();
-  });
-}
-
-// Add this to your existing JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-    // Set current year in copyright text
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-});
