@@ -5,25 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     
-    <!-- Base Stylesheet -->
+    <!-- Stylesheets --> 
     <link rel="stylesheet" href="{{ '/assets/css/default.css' | relative_url }}">
     
     <!-- Favicon -->
     <link rel="icon" href="{{ '/assets/images/favicon.png' | relative_url }}" type="image/x-icon">
     
-    <!-- Page-specific stylesheets -->
+    <!-- Additional custom head content -->
     {% if page.custom_css %}
         {% for stylesheet in page.custom_css %}
         <link rel="stylesheet" href="{{ '/assets/css/' | append: stylesheet | append: '.css' | relative_url }}">
         {% endfor %}
     {% endif %}
 </head>
-<body class="{{ page.body_class }}">
+<body>
     <!-- Vertical Bar with Toggle Button -->
     <div class="vertical-bar" id="verticalBar">
         <div class="sidebar-toggle" id="sidebarToggle">
@@ -47,22 +46,20 @@
             <li><a href="{{ '/research/' | relative_url }}">Research</a></li>
         </ul>
         
-        <!-- Sidebar Content -->
-        <div class="sidebar-content">
+          
+      <div class="sidebar-content">
             <div class="sidebar-text-container">
                 <p class="sidebar-description">
                     I am a creative professional exploring innovative approaches to design and technology. Passionate about crafting meaningful experiences that bridge creativity and functionality.
                 </p>
                 <div class="sidebar-contact">
-                    <a href="{{ '/contact/' | relative_url }}" class="contact-link contact-get-in-touch">Get in Touch</a>
-                    <a href="{{ '/follow/' | relative_url }}" class="contact-link contact-follow-me">Follow Me</a>
+                    <a href="contact" class="contact-link contact-get-in-touch">Get in Touch</a>
+                    <a href="follow" class="contact-link contact-follow-me">Follow Me</a>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- Content Overlay -->
-    <div id="contentOverlay" class="content-overlay"></div>
    
     <!-- Main Content -->
     <main class="main-content">
@@ -72,7 +69,6 @@
     <!-- Scripts -->
     <script src="{{ '/assets/js/default.js' | relative_url }}"></script>
 
-    <!-- Page-specific scripts -->
     {% if page.custom_js %}
         {% for js_file in page.custom_js %}
         <script src="{{ '/assets/js/' | append: js_file | append: '.js' | relative_url }}"></script>

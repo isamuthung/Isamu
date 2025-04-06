@@ -1,91 +1,90 @@
-/* -------------------------------------------
-   WRITINGS PAGE SPECIFIC STYLES
-   ------------------------------------------- */
-
-/* Fix for nested main content */
-.main-content > main {
-  width: 100%;
-  overflow: hidden;
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* -------------------------------------------
-   BANNER STYLING
-   ------------------------------------------- */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Main content */
+main {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Banner image - MODIFY HEIGHT HERE */
 .banner {
-  width: 100%;
-  height: 30vh; /* Banner height - can be adjusted as needed */
-  overflow: hidden;
+    width: 100%;
+    height: 30vh; /* Change this value to adjust banner height */
+    overflow: hidden;
 }
 
 .banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
-/* -------------------------------------------
-   CONTENT SECTION STYLING
-   ------------------------------------------- */
+/* Content section */
 .content {
-  padding: 10px 200px 120px;
+    padding: 10px 200px 120px;
 }
 
 h1 {
-  font-size: var(--font-size-xxl);
-  font-weight: var(--font-weight-light);
-  margin-bottom: var(--space-sm);
-  font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', serif;
 }
 
-/* -------------------------------------------
-   WRITINGS LIST STYLING
-   ------------------------------------------- */
 .writings-list {
-  list-style: none;
-  max-width: 900px;
+    list-style: none;
+    max-width: 900px;
 }
 
 .writings-list li {
-  margin-bottom: 14px; /* Reduced spacing between items */
-  position: relative;
-  padding-left: var(--space-xs);
+    margin-bottom: 14px; /* Reduced from 24px to make items closer */
+    position: relative;
+    padding-left: 16px; /* Reduced padding */
 }
 
 .writings-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--color-secondary);
-  font-size: var(--font-size-small);
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #333;
+    font-size: 0.8rem; /* Smaller bullet */
 }
 
 .writings-list a {
-  color: var(--color-secondary);
-  text-decoration: none;
-  font-size: var(--font-size-base);
-  font-family: var(--font-primary);
-  transition: color var(--transition-fast);
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem; /* Reduced font size from 1.25rem */
+    transition: color 0.3s ease;
 }
 
 .writings-list a:hover {
-  color: var(--color-accent);
+    color: #888;
 }
 
-/* -------------------------------------------
-   RESPONSIVE ADJUSTMENTS
-   ------------------------------------------- */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .content {
-    padding: var(--space-md) var(--space-md) var(--space-lg);
-  }
-  
-  h1 {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--space-md);
-  }
-  
-  .writings-list a {
-    font-size: var(--font-size-small);
-  }
+    .content {
+        padding: 40px 40px 80px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+    
+    .writings-list a {
+        font-size: 0.9rem;
+    }
 }

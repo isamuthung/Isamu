@@ -1,16 +1,13 @@
-/* -------------------------------------------
-   FOLLOW PAGE SPECIFIC STYLES
-   ------------------------------------------- */
-
-/* Override body styles for full-height centering */
-body.follow-page {
+body {
+  background-color: white;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  font-family: Arial, sans-serif;
 }
 
-/* Main wrapper for social icons */
 .follow-me-wrapper {
   display: flex;
   justify-content: center;
@@ -19,7 +16,6 @@ body.follow-page {
   height: 100vh;
 }
 
-/* Social icons container */
 .social-icons {
   display: flex;
   justify-content: center;
@@ -27,7 +23,6 @@ body.follow-page {
   gap: 40px;
 }
 
-/* Individual social icon */
 .social-icon {
   width: 80px;
   height: 80px;
@@ -35,8 +30,8 @@ body.follow-page {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-primary);
-  color: var(--color-light);
+  background-color: black;
+  color: white;
   text-decoration: none;
   transition: 
     transform 1.5s cubic-bezier(0.25, 0.1, 0.25, 1), 
@@ -49,7 +44,7 @@ body.follow-page {
 .social-icon svg {
   width: 40px;
   height: 40px;
-  stroke: var(--color-light);
+  stroke: white;
 }
 
 .social-icon:hover {
@@ -62,13 +57,11 @@ body.follow-page {
   transform: translateX(0) rotate(0);
 }
 
-/* -------------------------------------------
-   RESPONSIVE ADJUSTMENTS
-   ------------------------------------------- */
-@media (max-width: 768px) {
+/* Responsive adjustments */
+@media (max-width: 600px) {
   .social-icons {
     flex-direction: column;
-    gap: var(--space-sm);
+    gap: 20px;
   }
   
   .social-icon {
