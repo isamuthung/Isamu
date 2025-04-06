@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // PORTFOLIO ANIMATIONS
     // Function to check if element is in viewport
     function isInViewport(element) {
         const rect = element.getBoundingClientRect();
@@ -30,13 +29,24 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         handleScroll();
     }, 100);
+});
 
-    // SIDEBAR FUNCTIONALITY
+//SIDEBAR
+document.addEventListener('DOMContentLoaded', function() {
     // Get elements
     const sidebarToggle = document.getElementById('sidebarToggle');
     const sidebar = document.getElementById('sidebar');
-    const contentOverlay = document.getElementById('contentOverlay');
+    let contentOverlay = document.getElementById('contentOverlay'); // Changed from const to let
     const body = document.body;
+    
+    // Create overlay if it doesn't exist
+    if (!contentOverlay) {
+        const newOverlay = document.createElement('div');
+        newOverlay.id = 'contentOverlay';
+        newOverlay.className = 'content-overlay';
+        document.body.appendChild(newOverlay);
+        contentOverlay = newOverlay;
+    }
     
     // Function to toggle sidebar
     function toggleSidebar() {
@@ -94,3 +104,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+

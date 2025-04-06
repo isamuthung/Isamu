@@ -1,0 +1,347 @@
+[1mdiff --git a/.ruby-version b/.ruby-version[m
+[1mindex a4dd9db..aa5b86e 100644[m
+[1m--- a/.ruby-version[m
+[1m+++ b/.ruby-version[m
+[36m@@ -1 +1,2 @@[m
+[31m-2.7.4[m
+[32m+[m[32m3.2.8[m
+[41m+[m
+[1mdiff --git a/Gemfile b/Gemfile[m
+[1mindex 73a45da..e49346e 100644[m
+[1m--- a/Gemfile[m
+[1m+++ b/Gemfile[m
+[36m@@ -36,3 +36,5 @@[m [mgem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin][m
+ # Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem[m
+ # do not have a Java counterpart[m
+ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby][m
+[32m+[m
+[32m+[m[32mgem "webrick", "~> 1.9"[m
+[1mdiff --git a/about.md b/about.md[m
+[1mindex ceb9e0f..692b282 100644[m
+[1m--- a/about.md[m
+[1m+++ b/about.md[m
+[36m@@ -7,7 +7,7 @@[m [mbanner_image: /assets/images/about-banner.jpg[m
+ [m
+ <link rel="stylesheet" href="/Isamu/assets/css/about.css" />[m
+ [m
+[31m-<main>[m
+[32m+[m[32m<main class="about-page">[m
+     <section class="about-content">[m
+         <div class="about-hello-container">[m
+             <h1>[m
+[1mdiff --git a/assets/css/about.css b/assets/css/about.css[m
+[1mindex f3e853b..ec6693d 100644[m
+[1m--- a/assets/css/about.css[m
+[1m+++ b/assets/css/about.css[m
+[36m@@ -1,5 +1,12 @@[m
+ /* About Page Specific Styles - Two Column Layout */[m
+ [m
+[32m+[m[32m/* Override body font from default.css for specific consistency */[m
+[32m+[m[32mbody.about-page {[m
+[32m+[m[32m    font-family: 'Montserrat', sans-serif;[m
+[32m+[m[32m    line-height: 1.6;[m
+[32m+[m[32m    color: #333;[m
+[32m+[m[32m}[m
+[32m+[m
+ /* Fix for nested main */[m
+ .main-content > main {[m
+     width: 100%;[m
+[1mdiff --git a/assets/css/default.css b/assets/css/default.css[m
+[1mindex 1154c7b..75bf877 100644[m
+[1m--- a/assets/css/default.css[m
+[1m+++ b/assets/css/default.css[m
+[36m@@ -237,6 +237,7 @@[m [mbody {[m
+ .sidebar-contact .nav-links-contact {[m
+     color: var(--primary-text-color);[m
+     text-decoration: none;[m
+[32m+[m[32m    font-family: 'Montserrat', sans-serif; /* Explicitly set to Montserrat */[m
+     font-size: 1.2rem;[m
+     font-weight: 300;[m
+     position: relative;[m
+[36m@@ -281,7 +282,7 @@[m [mbody {[m
+ [m
+ .sidebar-description {[m
+     font-family: 'Playfair Display', serif;[m
+[31m-    font-style: normal; [m
+[32m+[m[32m    font-style: normal; /* Explicitly set to normal to prevent italics */[m
+     font-size: 2.5rem;[m
+     line-height: 1.5;[m
+     color: var(--primary-text-color);[m
+[1mdiff --git a/assets/css/follow.css b/assets/css/follow.css[m
+[1mindex 1a6b917..805c3ba 100644[m
+[1m--- a/assets/css/follow.css[m
+[1m+++ b/assets/css/follow.css[m
+[36m@@ -1,11 +1,17 @@[m
+[31m-body {[m
+[32m+[m[32m/* Override body font from default.css for specific consistency */[m
+[32m+[m[32mbody.follow-page {[m
+[32m+[m[32m  font-family: 'Montserrat', sans-serif;[m
+[32m+[m[32m  line-height: 1.6;[m
+[32m+[m[32m  color: #333;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.follow-page {[m
+   background-color: white;[m
+   margin: 0;[m
+   display: flex;[m
+   justify-content: center;[m
+   align-items: center;[m
+   min-height: 100vh;[m
+[31m-  font-family: Arial, sans-serif;[m
+ }[m
+ [m
+ .follow-me-wrapper {[m
+[1mdiff --git a/assets/css/journal.css b/assets/css/journal.css[m
+[1mindex 25091e2..16d6a6e 100644[m
+[1m--- a/assets/css/journal.css[m
+[1m+++ b/assets/css/journal.css[m
+[36m@@ -5,8 +5,9 @@[m
+     box-sizing: border-box;[m
+ }[m
+ [m
+[31m-body {[m
+[31m-    font-family: 'Helvetica Neue', Arial, sans-serif;[m
+[32m+[m[32m/* Override body font from default.css for specific consistency */[m
+[32m+[m[32mbody.journal-page {[m
+[32m+[m[32m    font-family: 'Montserrat', sans-serif;[m
+     line-height: 1.6;[m
+     color: #333;[m
+ }[m
+[36m@@ -18,13 +19,13 @@[m [mmain {[m
+ }[m
+ [m
+ /* Banner image - MODIFY HEIGHT HERE */[m
+[31m-.banner {[m
+[32m+[m[32m.journal-banner {[m
+     width: 100%;[m
+     height: 30vh; /* Change this value to adjust banner height */[m
+     overflow: hidden;[m
+ }[m
+ [m
+[31m-.banner img {[m
+[32m+[m[32m.journal-banner img {[m
+     width: 100%;[m
+     height: 100%;[m
+     object-fit: cover;[m
+[36m@@ -32,11 +33,11 @@[m [mmain {[m
+ }[m
+ [m
+ /* Content section */[m
+[31m-.content {[m
+[32m+[m[32m.journal-content {[m
+     padding: 10px 200px 120px;[m
+ }[m
+ [m
+[31m-h1 {[m
+[32m+[m[32m.journal-heading {[m
+     font-size: 3.5rem;[m
+     font-weight: 300;[m
+     margin-bottom: 20px;[m
+[36m@@ -75,11 +76,11 @@[m [mh1 {[m
+ [m
+ /* Responsive adjustments */[m
+ @media (max-width: 768px) {[m
+[31m-    .content {[m
+[32m+[m[32m    .journal-content {[m
+         padding: 40px 40px 80px;[m
+     }[m
+     [m
+[31m-    h1 {[m
+[32m+[m[32m    .journal-heading {[m
+         font-size: 2.5rem;[m
+         margin-bottom: 40px;[m
+     }[m
+[1mdiff --git a/assets/css/research.css b/assets/css/research.css[m
+[1mindex 8b13789..dce4074 100644[m
+[1m--- a/assets/css/research.css[m
+[1m+++ b/assets/css/research.css[m
+[36m@@ -1 +1,46 @@[m
+[32m+[m[32m/* Research Page Styles */[m
+ [m
+[32m+[m[32m/* Override body font from default.css for specific consistency */[m
+[32m+[m[32mbody.research-page {[m
+[32m+[m[32m    font-family: 'Montserrat', sans-serif;[m
+[32m+[m[32m    line-height: 1.6;[m
+[32m+[m[32m    color: #333;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m/* Banner styling */[m
+[32m+[m[32m.research-banner {[m
+[32m+[m[32m    width: 100%;[m
+[32m+[m[32m    height: 30vh; /* Change this value to adjust banner height */[m
+[32m+[m[32m    overflow: hidden;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.research-banner img {[m
+[32m+[m[32m    width: 100%;[m
+[32m+[m[32m    height: 100%;[m
+[32m+[m[32m    object-fit: cover;[m
+[32m+[m[32m    object-position: center;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m/* Content section */[m
+[32m+[m[32m.research-content {[m
+[32m+[m[32m    padding: 10px 200px 120px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.research-heading {[m
+[32m+[m[32m    font-size: 3.5rem;[m
+[32m+[m[32m    font-weight: 300;[m
+[32m+[m[32m    margin-bottom: 20px;[m
+[32m+[m[32m    font-family: 'Times New Roman', serif;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m/* Responsive adjustments */[m
+[32m+[m[32m@media (max-width: 768px) {[m
+[32m+[m[32m    .research-content {[m
+[32m+[m[32m        padding: 40px 40px 80px;[m
+[32m+[m[32m    }[m
+[32m+[m[41m    [m
+[32m+[m[32m    .research-heading {[m
+[32m+[m[32m        font-size: 2.5rem;[m
+[32m+[m[32m        margin-bottom: 40px;[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/assets/css/writings.css b/assets/css/writings.css[m
+[1mindex 8020b5c..4f63d6a 100644[m
+[1m--- a/assets/css/writings.css[m
+[1m+++ b/assets/css/writings.css[m
+[36m@@ -5,8 +5,9 @@[m
+     box-sizing: border-box;[m
+ }[m
+ [m
+[31m-body {[m
+[31m-    font-family: 'Helvetica Neue', Arial, sans-serif;[m
+[32m+[m[32m/* Override body font from default.css for specific consistency */[m
+[32m+[m[32mbody.writings-page {[m
+[32m+[m[32m    font-family: 'Montserrat', sans-serif;[m
+     line-height: 1.6;[m
+     color: #333;[m
+ }[m
+[36m@@ -18,13 +19,13 @@[m [mmain {[m
+ }[m
+ [m
+ /* Banner image - MODIFY HEIGHT HERE */[m
+[31m-.banner {[m
+[32m+[m[32m.writings-banner {[m
+     width: 100%;[m
+     height: 30vh; /* Change this value to adjust banner height */[m
+     overflow: hidden;[m
+ }[m
+ [m
+[31m-.banner img {[m
+[32m+[m[32m.writings-banner img {[m
+     width: 100%;[m
+     height: 100%;[m
+     object-fit: cover;[m
+[36m@@ -32,11 +33,11 @@[m [mmain {[m
+ }[m
+ [m
+ /* Content section */[m
+[31m-.content {[m
+[32m+[m[32m.writings-content {[m
+     padding: 10px 200px 120px;[m
+ }[m
+ [m
+[31m-h1 {[m
+[32m+[m[32m.writings-heading {[m
+     font-size: 3.5rem;[m
+     font-weight: 300;[m
+     margin-bottom: 20px;[m
+[36m@@ -75,11 +76,11 @@[m [mh1 {[m
+ [m
+ /* Responsive adjustments */[m
+ @media (max-width: 768px) {[m
+[31m-    .content {[m
+[32m+[m[32m    .writings-content {[m
+         padding: 40px 40px 80px;[m
+     }[m
+     [m
+[31m-    h1 {[m
+[32m+[m[32m    .writings-heading {[m
+         font-size: 2.5rem;[m
+         margin-bottom: 40px;[m
+     }[m
+[1mdiff --git a/follow.md b/follow.md[m
+[1mindex 9b19c8a..6f95a3f 100644[m
+[1m--- a/follow.md[m
+[1m+++ b/follow.md[m
+[36m@@ -3,6 +3,7 @@[m [mlayout: default[m
+ permalink: /follow/[m
+ ---[m
+ <link rel="stylesheet" href="{{ '/assets/css/follow.css' | relative_url }}">[m
+[32m+[m[32m<main class="follow-page">[m
+ <div class="follow-me-wrapper">[m
+   <div class="social-icons">[m
+   <a href="https://www.linkedin.com/in/yourusername" class="social-icon linkedin" aria-label="LinkedIn">[m
+[36m@@ -33,4 +34,5 @@[m [mpermalink: /follow/[m
+   </a>[m
+ </div>[m
+ </div>[m
+[32m+[m[32m</main>[m
+ <script src="{{ '/assets/js/follow.js' | relative_url }}"></script>[m
+[1mdiff --git a/journal.md b/journal.md[m
+[1mindex 732494f..48bab94 100644[m
+[1m--- a/journal.md[m
+[1m+++ b/journal.md[m
+[36m@@ -9,13 +9,13 @@[m [mbanner_image: /assets/images/journal-banner.jpg[m
+ <!-- Custom CSS for just this page -->[m
+ <link rel="stylesheet" href="{{ '/assets/css/journal.css' | relative_url }}">[m
+ [m
+[31m-<main>[m
+[31m-  <section class="banner">[m
+[32m+[m[32m<main class="journal-page">[m
+[32m+[m[32m  <section class="journal-banner">[m
+     <img src="{{ page.banner_image }}" alt="Journal banner image">[m
+   </section>[m
+   [m
+[31m-  <section class="content">[m
+[31m-    <h1>Journal Entries</h1>[m
+[32m+[m[32m  <section class="journal-content">[m
+[32m+[m[32m    <h1 class="journal-heading">Journal Entries</h1>[m
+     <ul class="journal-list">[m
+       <li><a href="/articles/minimalist-design-architecture">The Principles of Minimalist Design in Modern Architecture</a></li>[m
+       <li><a href="/articles/form-follows-function">Form Follows Function: A Study in Product Design</a></li>[m
+[1mdiff --git a/research.md b/research.md[m
+[1mindex 8ce4978..b5ab2d7 100644[m
+[1m--- a/research.md[m
+[1m+++ b/research.md[m
+[36m@@ -8,6 +8,16 @@[m [mbanner_image: /assets/images/research-banner.jpg[m
+ <!-- Custom CSS for just this page -->[m
+ <link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}">[m
+ [m
+[32m+[m[32m<main class="research-page">[m
+[32m+[m[32m  <section class="research-banner">[m
+[32m+[m[32m    <img src="{{ page.banner_image }}" alt="Research banner image">[m
+[32m+[m[32m  </section>[m
+[32m+[m[41m  [m
+[32m+[m[32m  <section class="research-content">[m
+[32m+[m[32m    <h1 class="research-heading">Research</h1>[m
+[32m+[m[32m    <!-- Research content goes here -->[m
+[32m+[m[32m  </section>[m
+[32m+[m[32m</main>[m
+ [m
+ <!-- Custom JavaScript for this page -->[m
+ <script src="{{ '/assets/js/research.js' | relative_url }}"></script>[m
+[1mdiff --git a/writings.md b/writings.md[m
+[1mindex 522e109..f321598 100644[m
+[1m--- a/writings.md[m
+[1m+++ b/writings.md[m
+[36m@@ -8,13 +8,13 @@[m [mbanner_image: /assets/images/writings-banner.jpg[m
+ <!-- Custom CSS for just this page -->[m
+ <link rel="stylesheet" href="{{ '/assets/css/writings.css' | relative_url }}">[m
+ [m
+[31m-<main>[m
+[31m-  <section class="banner">[m
+[32m+[m[32m<main class="writings-page">[m
+[32m+[m[32m  <section class="writings-banner">[m
+     <img src="{{ page.banner_image }}" alt="Writings banner image">[m
+   </section>[m
+   [m
+[31m-  <section class="content">[m
+[31m-    <h1>Writings</h1>[m
+[32m+[m[32m  <section class="writings-content">[m
+[32m+[m[32m    <h1 class="writings-heading">Writings</h1>[m
+     <ul class="writings-list">[m
+       <li><a href="/articles/minimalist-design-architecture">The Principles of Minimalist Design in Modern Architecture</a></li>[m
+       <li><a href="/articles/form-follows-function">Form Follows Function: A Study in Product Design</a></li>[m

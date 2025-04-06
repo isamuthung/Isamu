@@ -1,0 +1,199 @@
+/* About Page Specific Styles - Two Column Layout */
+
+/* Override body font from default.css for specific consistency */
+body.about-page {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Fix for nested main */
+.main-content > main {
+    width: 100%;
+    display: block;
+}
+
+/* Banner styling */
+.about-banner {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.about-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Fix image path if needed */
+.about-banner img[src^="/assets/"] {
+    content: url("/Isamu/assets/images/about-banner.jpg");
+}
+
+/* Content section styling */
+.about-content {
+    padding: 0 5% 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Create a container for the Hello and image to match the grid layout */
+.about-hello-container {
+    display: grid;
+    grid-template-columns: minmax(150px, 1fr) minmax(300px, 3fr);
+    gap: 30%;
+    margin-bottom: 80px;
+    margin-left: 0;
+    align-items: flex-start;
+}
+
+/* Hello heading styling */
+.about-content h1 {
+    font-size: 2.7rem;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 400;
+    color: #333;
+    position: relative;
+    padding-top: 150px;
+    padding-bottom: 10px;
+    text-align: left;
+    margin: 0;
+}
+
+.about-content h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 1px;
+    background-color: #ccc;
+}
+
+/* Image styling - positioned to align with Hello heading */
+.about-hello-image {
+    width: 100%;
+    position: relative;
+    margin-top: 80px
+}
+
+.about-hello-image img {
+    width: 100%;
+    height: 400px; /* Specify fixed height as requested */
+    object-fit: cover;
+    display: block;
+}
+
+/* Asterisk link styling */
+.about-asterisk-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.about-asterisk-link:hover {
+    color: #999;
+}
+
+
+/* Section styling for the content below */
+.about-section {
+    display: grid;
+    grid-template-columns: minmax(150px, 1fr) minmax(300px, 3fr);
+    gap: 30%;
+    margin-bottom: 80px;
+    margin-left: 0;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: "Times New Roman", Times, serif;
+    color: #2c463c;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+/* Paragraph styling */
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    font-family: "Times New Roman", Times, serif;
+    color: #2c463c;
+}
+
+
+/* Special styling for fancy text */
+.about-fancy-text {
+    font-size: 1.8rem;
+    line-height: 1.4;
+    font-weight: 300;
+    color: #999;
+    margin-bottom: 20px;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+}
+
+.about-fancy-text em {
+    font-style: normal;
+    color: #666;
+}
+
+/* Style for social links */
+.about-section:nth-of-type(6) p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Style for clients list */
+.about-section:nth-of-type(7) p {
+    line-height: 1.6;
+}
+
+/* Accolades section styling */
+.about-section:nth-of-type(8) p:first-of-type {
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-hello-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .about-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .about-hello-image img {
+        height: 250px; /* Smaller height for mobile */
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 40px;
+    }
+
+    .about-content {
+        padding: 0 20px 40px;
+    }
+
+    .about-fancy-text {
+        font-size: 1.5rem;
+    }
+}
+
+/* Larger screen adjustments */
+@media (min-width: 769px) {
+    .about-content {
+        padding: 0 7% 80px;
+    }
+}
