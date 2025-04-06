@@ -281,6 +281,7 @@ body {
 
 .sidebar-description {
     font-family: 'Playfair Display', serif;
+    font-style: normal; 
     font-size: 2.5rem;
     line-height: 1.5;
     color: var(--primary-text-color);
