@@ -19,11 +19,10 @@ permalink: /follow/
       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
     </svg>
   </a>
- <a href="https://medium.com/@yourusername" class="social-icon medium" aria-label="Medium">
+  <a href="https://medium.com/@yourusername" class="social-icon medium" aria-label="Medium">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="8" cy="12" r="5.5"></circle>
-      <circle cx="17" cy="12" r="3.5"></circle>
-      <circle cx="22" cy="12" r="2"></circle>
+      <circle cx="12" cy="12" r="10" stroke="currentColor" fill="none"></circle>
+      <path d="M8 7.5v9h1.5l1-1V8.5l-1-1H8zm3.5 0l3 4.5-3 4.5h1.5l3-4.5-3-4.5h-1.5zm5 0v9h1.5l1-1V8.5l-1-1h-1.5z" stroke="none" fill="currentColor"></path>
     </svg>
   </a>
   <a href="https://www.youtube.com/user/yourusername" class="social-icon youtube" aria-label="YouTube">
