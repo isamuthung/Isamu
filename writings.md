@@ -8,13 +8,13 @@ banner_image: /assets/images/writings-banner.jpg
 <!-- Custom CSS for just this page -->
 <link rel="stylesheet" href="{{ '/assets/css/writings.css' | relative_url }}">
 
-<main>
-  <section class="banner">
+<main class="writings-main">
+  <section class="writings-banner">
     <img src="{{ page.banner_image }}" alt="Writings banner image">
   </section>
   
-  <section class="content">
-    <h1>Writings</h1>
+  <section class="writings-content">
+    <h1 class="writings-heading">Writings</h1>
     <ul class="writings-list">
       <li><a href="/articles/minimalist-design-architecture">The Principles of Minimalist Design in Modern Architecture</a></li>
       <li><a href="/articles/form-follows-function">Form Follows Function: A Study in Product Design</a></li>

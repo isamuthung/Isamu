@@ -9,13 +9,13 @@ banner_image: /assets/images/journal-banner.jpg
 <!-- Custom CSS for just this page -->
 <link rel="stylesheet" href="{{ '/assets/css/journal.css' | relative_url }}">
 
-<main>
-  <section class="banner">
+<main class="journal-main">
+  <section class="journal-banner">
     <img src="{{ page.banner_image }}" alt="Journal banner image">
   </section>
   
-  <section class="content">
-    <h1>Journal Entries</h1>
+  <section class="journal-content">
+    <h1 class="journal-heading">Journal Entries</h1>
     <ul class="journal-list">
       <li><a href="/articles/minimalist-design-architecture">The Principles of Minimalist Design in Modern Architecture</a></li>
       <li><a href="/articles/form-follows-function">Form Follows Function: A Study in Product Design</a></li>

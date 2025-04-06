@@ -1,11 +1,12 @@
-body {
+/* Follow page specific styles */
+.follow-body {
   background-color: white;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  font-family: Arial, sans-serif;
+  /* Font family is inherited from default.css */
 }
 
 .follow-me-wrapper {
