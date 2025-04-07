@@ -39,6 +39,26 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial check for elements in view
     revealOnScroll();
     
+    // Handle "Read More" functionality
+    const readMoreButtons = document.querySelectorAll('.about-read-more');
+    
+    readMoreButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-target');
+            const targetContainer = document.getElementById(targetId);
+            
+            // Toggle expanded class
+            targetContainer.classList.toggle('expanded');
+            
+            // Change button text based on state
+            if (targetContainer.classList.contains('expanded')) {
+                this.textContent = 'Read Less';
+            } else {
+                this.textContent = 'Read More';
+            }
+        });
+    });
+    
     // Pseudo-functionality for image loading
     function loadProfileImage() {
        
