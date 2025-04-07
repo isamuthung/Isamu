@@ -15,8 +15,8 @@ custom_js: ["writings"]
   <section class="writings-content">
     <h1 class="writings-heading">Writings</h1>
     <ul class="writings-list">
-      <li><a href="/writings/minimalist-design">The Principles of Minimalist Design in Modern Architecture</a></li>
-      <li><a href="/writings/digital-minimalism">Digital Minimalism: Designing for Focus in an Age of Distraction</a></li>
+      <li><a href="https://isamuthung.github.io/Isamu/writings/minimalist-design/">The Principles of Minimalist Design in Modern Architecture</a></li>
+      <li><a href="https://isamuthung.github.io/Isamu/writings/digital-minimalism/">Digital Minimalism: Designing for Focus in an Age of Distraction</a></li>
       <li><a href="/writings/form-follows-function">Form Follows Function: A Study in Product Design</a></li>
       <li><a href="/writings/negative-space-ui-design">Negative Space and Visual Hierarchy in UI Design</a></li>
       <li><a href="/writings/typography-minimalist-aesthetics">Typography as a Cornerstone of Minimalist Aesthetics</a></li>
