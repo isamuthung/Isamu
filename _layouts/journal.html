@@ -1,0 +1,75 @@
+---
+layout: default
+---
+
+<main class="journal-main">
+  <!-- Banner image - from page frontmatter -->
+  {% if page.banner_image %}
+  <section class="journal-banner">
+    <img src="{{ page.banner_image }}" alt="{{ page.title }} banner image">
+  </section>
+  {% endif %}
+  
+  <article class="journal-article">
+    <!-- Article header -->
+    <header class="journal-header">
+      <h1 class="journal-title">{{ page.title }}</h1>
+      {% if page.location %}
+      <div class="journal-location">{{ page.location }}</div>
+      {% endif %}
+      {% if page.date %}
+      <time class="journal-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      {% endif %}
+      {% if page.mood %}
+      <div class="journal-mood">Mood: {{ page.mood }}</div>
+      {% endif %}
+    </header>
+    
+    <!-- Main content -->
+    <div class="journal-content">
+      {{ content }}
+    </div>
+    
+    <!-- Optional tags -->
+    {% if page.tags %}
+    <div class="journal-tags">
+      <span class="journal-tags-label">Tags:</span>
+      <ul class="journal-tags-list">
+        {% for tag in page.tags %}
+        <li class="journal-tag">#{{ tag }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    
+    <!-- Optional image gallery -->
+    {% if page.gallery %}
+    <div class="journal-gallery">
+      <h3 class="journal-section-title">Photo Gallery</h3>
+      <div class="journal-gallery-grid">
+        {% for image in page.gallery %}
+        <figure class="journal-gallery-item">
+          <img src="{{ image.url }}" alt="{{ image.caption }}" class="journal-gallery-image">
+          {% if image.caption %}
+          <figcaption class="journal-gallery-caption">{{ image.caption }}</figcaption>
+          {% endif %}
+        </figure>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    
+    <!-- Navigation between journal entries -->
+    <nav class="journal-navigation">
+      {% if page.previous.url %}
+      <a href="{{ page.previous.url }}" class="journal-nav-prev">← Previous</a>
+      {% endif %}
+      {% if page.next.url %}
+      <a href="{{ page.next.url }}" class="journal-nav-next">Next →</a>
+      {% endif %}
+    </nav>
+  </article>
+</main>
+
+<!-- Custom JavaScript for this page -->
+<script src="{{ '/assets/js/journal.js' | relative_url }}"></script>

@@ -3,11 +3,9 @@ layout: default
 title: Journal
 permalink: /journal/
 banner_image: /assets/images/journal-banner.jpg
+custom_css: ["journal"]
+custom_js: ["journal"]
 ---
-
-
-<!-- Custom CSS for just this page -->
-<link rel="stylesheet" href="{{ '/assets/css/journal.css' | relative_url }}">
 
 <main class="journal-main">
   <section class="journal-banner">
@@ -17,15 +15,12 @@ banner_image: /assets/images/journal-banner.jpg
   <section class="journal-content">
     <h1 class="journal-heading">Journal Entries</h1>
     <ul class="journal-list">
-      <li><a href="/articles/minimalist-design-architecture">The Principles of Minimalist Design in Modern Architecture</a></li>
-      <li><a href="/articles/form-follows-function">Form Follows Function: A Study in Product Design</a></li>
-      <li><a href="/articles/negative-space-ui-design">Negative Space and Visual Hierarchy in UI Design</a></li>
-      <li><a href="/articles/typography-minimalist-aesthetics">Typography as a Cornerstone of Minimalist Aesthetics</a></li>
-      <li><a href="/articles/black-white-photography">Black and White Photography: The Art of Reduction</a></li>
-      <li><a href="/articles/digital-minimalism">Digital Minimalism: Designing for Focus in an Age of Distraction</a></li>
+      <li><a href="/journal/tokyo-reflections">Tokyo Reflections: Finding Inspiration in Urban Contrasts</a></li>
+      <li><a href="/journal/creative-process">Evolving My Creative Process: Sketching as Thinking</a></li>
+      <li><a href="/journal/berlin-design-week">Berlin Design Week: Emerging Trends and Conversations</a></li>
+      <li><a href="/journal/material-experiments">Material Experiments: Working with Bioplastics</a></li>
+      <li><a href="/journal/reading-notes-design-systems">Reading Notes: Design Systems by Alla Kholmatova</a></li>
+      <li><a href="/journal/studio-reorganization">Studio Reorganization: Creating an Optimal Creative Environment</a></li>
     </ul>
   </section>
 </main>
-
-<!-- Custom JavaScript for this page -->
-<script src="{{ '/assets/js/journal.js' | relative_url }}"></script>
