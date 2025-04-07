@@ -15,8 +15,8 @@ custom_js: ["journal"]
   <section class="journal-content">
     <h1 class="journal-heading">Journal Entries</h1>
     <ul class="journal-list">
-      <li><a href="/journal/tokyo-reflections">Tokyo Reflections: Finding Inspiration in Urban Contrasts</a></li>
-      <li><a href="/journal/creative-process">Evolving My Creative Process: Sketching as Thinking</a></li>
+      <li><a href="https://isamuthung.github.io/Isamu/journal/tokyo-reflections/">Tokyo Reflections: Finding Inspiration in Urban Contrasts</a></li>
+      <li><a href="https://isamuthung.github.io/Isamu/journal/creative-process/">Evolving My Creative Process: Sketching as Thinking</a></li>
       <li><a href="/journal/berlin-design-week">Berlin Design Week: Emerging Trends and Conversations</a></li>
       <li><a href="/journal/material-experiments">Material Experiments: Working with Bioplastics</a></li>
       <li><a href="/journal/reading-notes-design-systems">Reading Notes: Design Systems by Alla Kholmatova</a></li>
