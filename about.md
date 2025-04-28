@@ -5,7 +5,7 @@ permalink: /about/
 banner_image: /assets/images/about-banner.jpg
 ---
 
-<link rel="stylesheet" href="/Isamu/assets/css/about.css" />
+<link rel="stylesheet" href="/assets/css/about.css" />
 
 <main>
     <section class="about-content">
