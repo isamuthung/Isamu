@@ -10,7 +10,7 @@ description: >- # This means to ignore newlines until the next key
   A portfolio website showcasing my work, writings, and projects.
   Built with Jekyll and hosted on GitHub Pages.
 baseurl: "/Isamu" # The subpath of your site, e.g. /blog (Check if this is correct for GitHub Pages)
-url: "https://isamuthung.github.io" # The base hostname & protocol for your site, e.g. http://example.com
+url: "https://isamuthung.com" # The base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown
