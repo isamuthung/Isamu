@@ -1,75 +1,105 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for internal links (if any are added later)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
+    // Handle column clicks to navigate to subpages
+    const columns = document.querySelectorAll('.about-column');
+    
+    columns.forEach(column => {
+        column.addEventListener('click', function() {
+            const columnType = this.classList[1]; // Gets 'origin', 'vision', or 'mission'
             
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            // Navigate to respective subpage
+            // You can modify these URLs to match your actual subpage structure
+            switch(columnType) {
+                case 'origin':
+                    window.location.href = '/about/origin/';
+                    break;
+                case 'vision':
+                    window.location.href = '/about/vision/';
+                    break;
+                case 'mission':
+                    window.location.href = '/about/mission/';
+                    break;
+                default:
+                    console.warn('Unknown column type:', columnType);
+            }
         });
+        
+        // Add keyboard accessibility
+        column.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
+        
+        // Make columns focusable for keyboard navigation
+        column.setAttribute('tabindex', '0');
+        column.setAttribute('role', 'button');
     });
     
-    // Reveal elements on scroll (subtle fade-in animation)
-    const revealElements = document.querySelectorAll('.right-column');
-    
-    function revealOnScroll() {
-        revealElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            
-            if (elementTop < windowHeight - 100) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
+    // Add subtle parallax effect on scroll (optional enhancement)
+    function handleScroll() {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.about-column');
+        
+        parallaxElements.forEach((element, index) => {
+            const rate = scrolled * -0.1 * (index + 1);
+            element.style.transform = `translateY(${rate}px)`;
         });
     }
     
-    // Apply initial styles for animation
-    revealElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    // Throttle scroll events for better performance
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        scrollTimeout = setTimeout(handleScroll, 10);
     });
     
-    // Add scroll event listener
-    window.addEventListener('scroll', revealOnScroll);
-    
-    // Initial check for elements in view
-    revealOnScroll();
-    
-    // Handle "Read More" functionality
-    const readMoreButtons = document.querySelectorAll('.about-read-more');
-    
-    readMoreButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const targetId = this.getAttribute('data-target');
-            const targetContainer = document.getElementById(targetId);
+    // Smooth entrance animation
+    function animateColumnsOnLoad() {
+        const columns = document.querySelectorAll('.about-column');
+        
+        columns.forEach((column, index) => {
+            column.style.opacity = '0';
+            column.style.transform = 'translateY(50px)';
+            column.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
             
-            // Toggle expanded class
-            targetContainer.classList.toggle('expanded');
-            
-            // Change button text based on state
-            if (targetContainer.classList.contains('expanded')) {
-                this.textContent = 'Read Less';
-            } else {
-                this.textContent = 'Read More';
-            }
+            setTimeout(() => {
+                column.style.opacity = '1';
+                column.style.transform = 'translateY(0)';
+            }, index * 200);
         });
-    });
-    
-    // Pseudo-functionality for image loading
-    function loadProfileImage() {
-       
-        // For demonstration - add a class after timeout to simulate image load
-        setTimeout(() => {
-            const imageContainer = document.querySelector('.image-container');
-            if (imageContainer) {
-                imageContainer.classList.add('loaded');
-            }
-        }, 1000);
     }
     
-    loadProfileImage();
+    // Initialize entrance animation
+    animateColumnsOnLoad();
+    
+    // Add hover sound effect (optional - uncomment if you want audio feedback)
+    /*
+    columns.forEach(column => {
+        column.addEventListener('mouseenter', function() {
+            // You can add a subtle hover sound here
+            // const audio = new Audio('/assets/sounds/hover.mp3');
+            // audio.volume = 0.1;
+            // audio.play().catch(e => console.log('Audio play failed:', e));
+        });
+    });
+    */
+    
+    // Enhanced accessibility announcements
+    columns.forEach(column => {
+        const columnType = column.classList[1];
+        column.setAttribute('aria-label', `Navigate to ${columnType} page`);
+        
+        column.addEventListener('focus', function() {
+            this.style.outline = '2px solid rgba(255, 255, 255, 0.8)';
+            this.style.outlineOffset = '-4px';
+        });
+        
+        column.addEventListener('blur', function() {
+            this.style.outline = 'none';
+        });
+    });
 });
