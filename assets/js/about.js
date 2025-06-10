@@ -1,105 +1,159 @@
-// Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Handle column clicks to navigate to subpages
-    const columns = document.querySelectorAll('.about-column');
+    // Function to check if element is in viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.bottom >= 0
+        );
+    }
     
-    columns.forEach(column => {
-        column.addEventListener('click', function() {
-            const columnType = this.classList[1]; // Gets 'origin', 'vision', or 'mission'
-            
-            // Navigate to respective subpage
-            // You can modify these URLs to match your actual subpage structure
-            switch(columnType) {
-                case 'origin':
-                    window.location.href = '/about/origin/';
-                    break;
-                case 'vision':
-                    window.location.href = '/about/vision/';
-                    break;
-                case 'mission':
-                    window.location.href = '/about/mission/';
-                    break;
-                default:
-                    console.warn('Unknown column type:', columnType);
-            }
-        });
-        
-        // Add keyboard accessibility
-        column.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                this.click();
-            }
-        });
-        
-        // Make columns focusable for keyboard navigation
-        column.setAttribute('tabindex', '0');
-        column.setAttribute('role', 'button');
-    });
-    
-    // Add subtle parallax effect on scroll (optional enhancement)
+    // Function to handle scroll animation with staggered fade-in effect
     function handleScroll() {
-        const scrolled = window.pageYOffset;
-        const parallaxElements = document.querySelectorAll('.about-column');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        const images = document.querySelectorAll('.portfolio-item img');
         
-        parallaxElements.forEach((element, index) => {
-            const rate = scrolled * -0.1 * (index + 1);
-            element.style.transform = `translateY(${rate}px)`;
+        portfolioItems.forEach((item, index) => {
+            if (isInViewport(item) && !item.classList.contains('visible')) {
+                // Add a staggered delay for each item (500ms apart for slower effect)
+                setTimeout(() => {
+                    item.classList.add('visible');
+                }, index * 500);
+            }
+        });
+        
+        images.forEach((img, index) => {
+            if (isInViewport(img) && !img.classList.contains('visible')) {
+                // Add a staggered delay for each image (500ms apart)
+                setTimeout(() => {
+                    img.classList.add('visible');
+                }, index * 500);
+            }
         });
     }
     
-    // Throttle scroll events for better performance
-    let scrollTimeout;
-    window.addEventListener('scroll', function() {
-        if (scrollTimeout) {
-            clearTimeout(scrollTimeout);
+    // Initialize portfolio items and images with hidden state and transform
+    function initializePortfolioItems() {
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        const images = document.querySelectorAll('.portfolio-item img');
+        
+        portfolioItems.forEach(item => {
+            // Set initial styles for animation
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(50px)';
+            item.style.transition = 'opacity 2s ease-out, transform 2s ease-out';
+        });
+        
+        images.forEach(img => {
+            // Set initial styles for image animation
+            img.style.opacity = '0';
+            img.style.transform = 'translateY(30px) scale(0.95)';
+            img.style.transition = 'opacity 2s ease-out, transform 2s ease-out';
+        });
+        
+        // Add visible class styles
+        if (!document.querySelector('style[data-portfolio-animation]')) {
+            const style = document.createElement('style');
+            style.setAttribute('data-portfolio-animation', 'true');
+            style.textContent = `
+                .portfolio-item.visible {
+                    opacity: 1 !important;
+                    transform: translateY(0) !important;
+                }
+                .portfolio-item img.visible {
+                    opacity: 1 !important;
+                    transform: translateY(0) scale(1) !important;
+                }
+            `;
+            document.head.appendChild(style);
         }
-        scrollTimeout = setTimeout(handleScroll, 10);
-    });
-    
-    // Smooth entrance animation
-    function animateColumnsOnLoad() {
-        const columns = document.querySelectorAll('.about-column');
-        
-        columns.forEach((column, index) => {
-            column.style.opacity = '0';
-            column.style.transform = 'translateY(50px)';
-            column.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            
-            setTimeout(() => {
-                column.style.opacity = '1';
-                column.style.transform = 'translateY(0)';
-            }, index * 200);
-        });
     }
     
-    // Initialize entrance animation
-    animateColumnsOnLoad();
+    // Initialize the animation setup
+    initializePortfolioItems();
     
-    // Add hover sound effect (optional - uncomment if you want audio feedback)
-    /*
-    columns.forEach(column => {
-        column.addEventListener('mouseenter', function() {
-            // You can add a subtle hover sound here
-            // const audio = new Audio('/assets/sounds/hover.mp3');
-            // audio.volume = 0.1;
-            // audio.play().catch(e => console.log('Audio play failed:', e));
-        });
+    // Initial check for items in viewport
+    handleScroll();
+    
+    // Event listener for scroll
+    window.addEventListener('scroll', handleScroll);
+    
+    // For smoother animations on page load with longer delay to ensure content is ready
+    setTimeout(function() {
+        handleScroll();
+    }, 300);
+});
+
+//SIDEBAR
+document.addEventListener('DOMContentLoaded', function() {
+    // Get elements
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebar = document.getElementById('sidebar');
+    let contentOverlay = document.getElementById('contentOverlay'); // Changed from const to let
+    const body = document.body;
+    
+    // Create overlay if it doesn't exist
+    if (!contentOverlay) {
+        const newOverlay = document.createElement('div');
+        newOverlay.id = 'contentOverlay';
+        newOverlay.className = 'content-overlay';
+        document.body.appendChild(newOverlay);
+        contentOverlay = newOverlay;
+    }
+    
+    // Function to toggle sidebar
+    function toggleSidebar() {
+        sidebarToggle.classList.toggle('active');
+        sidebar.classList.toggle('active');
+        contentOverlay.classList.toggle('active');
+        
+        // Prevent scrolling on body when sidebar is open
+        if (sidebar.classList.contains('active')) {
+            body.style.overflow = 'hidden';
+        } else {
+            body.style.overflow = 'auto';
+        }
+    }
+
+    // Add click event to toggle button
+    sidebarToggle.addEventListener('click', toggleSidebar);
+    
+    // Close sidebar when clicking on overlay
+    contentOverlay.addEventListener('click', function() {
+        if (sidebar.classList.contains('active')) {
+            toggleSidebar();
+        }
     });
-    */
     
-    // Enhanced accessibility announcements
-    columns.forEach(column => {
-        const columnType = column.classList[1];
-        column.setAttribute('aria-label', `Navigate to ${columnType} page`);
-        
-        column.addEventListener('focus', function() {
-            this.style.outline = '2px solid rgba(255, 255, 255, 0.8)';
-            this.style.outlineOffset = '-4px';
-        });
-        
-        column.addEventListener('blur', function() {
-            this.style.outline = 'none';
+    // Close sidebar when pressing Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && sidebar.classList.contains('active')) {
+            toggleSidebar();
+        }
+    });
+    
+    // Handle window resize events
+    window.addEventListener('resize', function() {
+        // Any resize-specific adjustments can go here
+    });
+    
+    // Navigation links with smooth transition
+    document.querySelectorAll('.nav-links a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            // Only if sidebar is active
+            if (sidebar.classList.contains('active')) {
+                e.preventDefault(); // Prevent immediate navigation
+                const destination = this.getAttribute('href');
+                
+                // Close sidebar with animation
+                toggleSidebar();
+                
+                // Wait for the sidebar transition to complete before navigating
+                // Duration matches the CSS transition time (0.8s)
+                setTimeout(function() {
+                    window.location.href = destination;
+                }, 800);
+            }
         });
     });
 });
