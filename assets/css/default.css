@@ -198,13 +198,13 @@ body {
     top: 0;
     left: 80px;
     width: calc(80vw - 80px);
-    height: 100%;
+    height: 100vh;
     background-color: var(--primary-bg-color);
     color: var(--primary-text-color);
     z-index: 990;
     transform: translateX(-100%);
     transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
-    overflow-y: auto;
+    overflow: hidden; /* Changed from overflow-y: auto to hidden */
     padding: 33px 80px 40px 40px;
     display: flex;
     flex-direction: column;
@@ -220,7 +220,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px; /* Reduced from 40px */
 }
 
 .nav-links li {
@@ -269,40 +269,53 @@ body {
 /* Sidebar Content */
 .sidebar-content {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    flex-direction: column;
     flex-grow: 1;
+    min-height: 0; /* Allow flex item to shrink */
     padding-right: 20px;
 }
 
 .sidebar-text-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     max-width: 700px;
+    height: 100%; /* Use full available height */
 }
 
 .sidebar-description {
     font-family: 'Playfair Display', serif;
     font-style: normal; 
-    font-size: 2.5rem;
-    line-height: 1.5;
+    font-size: 2.4rem; /* Increased slightly for better line breaks */
+    line-height: 1.35; /* Tighter line height */
     color: var(--primary-text-color);
     text-align: left;
-    margin-top: 5%;
-    margin-bottom: 100px;
+    margin-top: 3%;
+    margin-bottom: 35px; /* Reduced gap between title and paragraph */
+    flex-grow: 1;
+}
+
+.intro-text {
+    margin-bottom: 15px; /* Adjust this value to control the gap - try 10px, 20px, etc. */
+}
+
+.mission-text {
+    margin-bottom: 0;
 }
 
 .sidebar-contact {
     display: flex;
     gap: 30px;
     align-items: center;
-    margin-top: auto;
+    margin-top: auto; /* This pushes it to the bottom */
+    flex-shrink: 0; /* Prevent it from shrinking */
 }
-
 
 .contact-link {
     text-decoration: none;
     color: var(--contact-link-color);
     font-family: var(--contact-link-font);
-    font-size: 2.5rem;
+    font-size: 2.2rem; /* Reduced from 2.5rem */
     font-weight: 400;
     font-style: italic; 
     letter-spacing: 1px;
@@ -310,7 +323,6 @@ body {
     position: relative;
     opacity: 0.8;
 }
-
 
 .contact-link:hover {
     color: var(--contact-link-hover-color);
@@ -331,8 +343,6 @@ body {
 .contact-link:hover::after {
     width: 100%;
 }
-
-
 
 /* Main Content Area */
 .main-content {
@@ -369,7 +379,7 @@ body {
     .sidebar {
         left: 60px;
         width: calc(90vw - 60px);
-        padding: 33px 40px 0px 10px;
+        padding: 33px 40px 40px 10px;
     }
 
     .main-content {
@@ -377,24 +387,30 @@ body {
     }
 
     .sidebar-description {
-        font-size: 1.8rem;
+        font-size: 1.7rem; /* Slightly increased for better readability */
+        margin-bottom: 25px; /* Adjusted for better spacing */
+        line-height: 1.3;
+    }
+    
+    .contact-link {
+        font-size: 1.8rem; /* Reduced proportionally */
     }
 }
 
 @media (max-width: 768px) {
-   
-
     .sidebar-description {
-        font-size: 1.4rem;
+        font-size: 1.3rem; /* Slightly increased for mobile */
         margin-bottom: 20px;
+        line-height: 1.25; /* Tighter for mobile */
     }
 
     .sidebar-contact {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+        gap: 15px; /* Reduced from 10px to 15px for better spacing */
     }
-
     
-  
+    .contact-link {
+        font-size: 1.5rem; /* Reduced for mobile */
+    }
 }
