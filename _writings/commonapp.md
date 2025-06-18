@@ -1,6 +1,6 @@
 ---
-layout: writings
-title: "Finding Agency in Learning"
+layout: default
+title: "CommonApp Essay"
 subtitle: "How discovering authentic education transformed my perspective on school and my future"
 date: 2025-03-20
 ---
