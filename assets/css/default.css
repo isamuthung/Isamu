@@ -13,7 +13,7 @@
             height: 100vh;
             overflow: hidden;
             opacity: 0;
-            animation: fadeInPage 1.2s ease-out 0.3s forwards;
+            animation: fadeInPage 0.5s ease-out 0.1s forwards;
         }
 
         /* Page fade-in animation */
@@ -313,15 +313,16 @@
             opacity: 0;
         }
 
-        /* Staggered animation delays for portfolio items */
-        .portfolio-item:nth-child(1) { animation: fadeInItem 0.8s ease-out 0.8s forwards; }
-        .portfolio-item:nth-child(2) { animation: fadeInItem 0.8s ease-out 1.0s forwards; }
-        .portfolio-item:nth-child(3) { animation: fadeInItem 0.8s ease-out 1.2s forwards; }
-        .right-grid .portfolio-item:nth-child(1) { animation: fadeInItem 0.8s ease-out 1.4s forwards; }
-        .right-grid .portfolio-item:nth-child(2) { animation: fadeInItem 0.8s ease-out 1.6s forwards; }
-        .right-grid .portfolio-item:nth-child(3) { animation: fadeInItem 0.8s ease-out 1.8s forwards; }
-        .right-grid .portfolio-item:nth-child(4) { animation: fadeInItem 0.8s ease-out 2.0s forwards; }
-        .right-grid .portfolio-item:nth-child(5) { animation: fadeInItem 0.8s ease-out 2.2s forwards; }
+        /* Faster staggered animation delays for portfolio items */
+.portfolio-item:nth-child(1) { animation: fadeInItem 0.5s ease-out 0.3s forwards; }
+.portfolio-item:nth-child(2) { animation: fadeInItem 0.5s ease-out 0.45s forwards; }
+.portfolio-item:nth-child(3) { animation: fadeInItem 0.5s ease-out 0.6s forwards; }
+.right-grid .portfolio-item:nth-child(1) { animation: fadeInItem 0.5s ease-out 0.75s forwards; }
+.right-grid .portfolio-item:nth-child(2) { animation: fadeInItem 0.5s ease-out 0.9s forwards; }
+.right-grid .portfolio-item:nth-child(3) { animation: fadeInItem 0.5s ease-out 1.05s forwards; }
+.right-grid .portfolio-item:nth-child(4) { animation: fadeInItem 0.5s ease-out 1.2s forwards; }
+.right-grid .portfolio-item:nth-child(5) { animation: fadeInItem 0.5s ease-out 1.35s forwards; }
+
 
         .portfolio-item:hover {
             background-color: #d0d0d0;
