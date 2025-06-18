@@ -2,15 +2,11 @@
 layout: default
 title: Writings
 permalink: /writings/
-banner_image: /assets/images/writings-banner.jpg
 custom_css: ["writings"]
 custom_js: ["writings"]
 ---
 
 <main class="writings-main">
-  <section class="writings-banner">
-    <img src="{{ page.banner_image }}" alt="Writings banner image">
-  </section>
   
   <section class="writings-content">
     <h1 class="writings-heading">Writings</h1>
