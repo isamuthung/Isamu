@@ -1,4 +1,24 @@
+/* Reset any inherited margins/padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* Ensure body and html don't have margins/padding */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Fix for nested main */
+.main-content > main {
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
 
         body {
             font-family: 'Montserrat', sans-serif;
