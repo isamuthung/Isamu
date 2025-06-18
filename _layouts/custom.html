@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  {% if page.title %}
+    {{ page.title }}
+  {% else %}
+    {{ site.title }}
+  {% endif %}
+</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{{ '/assets/images/favicon.png' | relative_url }}" type="image/x-icon">
+    
+    <!-- Stylesheets -->    
+    {% if page.custom_css %}
+        {% for stylesheet in page.custom_css %}
+        <link rel="stylesheet" href="{{ '/assets/css/' | append: stylesheet | append: '.css' | relative_url }}">
+        {% endfor %}
+    {% endif %}
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZB2M38HXQ0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZB2M38HXQ0');
+</script>
+    
+</head>
+<body>
+    <!-- Vertical Bar with Toggle Button -->
+    <div class="vertical-bar" id="verticalBar">
+        <div class="sidebar-toggle" id="sidebarToggle">
+            <span class="toggle-icon"></span>
+            <span class="toggle-icon"></span>
+            <span class="toggle-icon"></span>
+        </div>
+    </div>
+    
+
+      <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <ul class="nav-links">
+            <li><a href="/about/">About</a></li>
+            <li class="nav-dot">•</li>
+            <li><a href="/writings/">Writings</a></li>
+            <li class="nav-dot">•</li>
+            <li><a href="/">Projects</a></li>
+            <li class="nav-dot">•</li>
+            <li><a href="/research/">Research</a></li>
+            <li class="nav-dot">•</li>
+            <li><a href="/experiences/">Experiences</a></li>
+        </ul>
+        
+          
+      <div class="sidebar-content">
+            <div class="sidebar-text-container">
+                <div class="sidebar-description">
+    <div class="intro-text">
+        Isamu Thung; Rebel. Writer.<br>Future Educator & Entrepreneur.
+    </div>
+    <div class="mission-text">
+        I aspire to live in a world where the systems around us help people lead fulfilling and successful lives in the ways each of us define them.
+    </div>
+</div>
+                <div class="sidebar-contact">
+                  <a href="mailto:isamuthung@gmail.com?subject=Reaching%20Out!" class="contact-link contact-get-in-touch">Get in Touch</a>
+                    <a href="https:/follow/" class="contact-link contact-follow-me">Follow Me</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   
+    <!-- Main Content -->
+    <main class="main-content">
+        {{ content }}
+    </main>
+    
+    <!-- Scripts -->
+
+    {% if page.custom_js %}
+        {% for js_file in page.custom_js %}
+        <script src="{{ '/assets/js/' | append: js_file | append: '.js' | relative_url }}"></script>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
+
 
