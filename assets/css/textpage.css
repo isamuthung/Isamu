@@ -131,7 +131,7 @@
     font-size: 1.2rem;
     font-weight: 300;
     font-family: 'Montserrat', sans-serif;
-    list-style: none;
+    list-style: disc;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
