@@ -1,15 +1,7 @@
 ---
 layout: default
 ---
-
 <main class="writings-main">
-  <!-- Banner image - from page frontmatter -->
-  {% if page.banner_image %}
-  <section class="writings-banner">
-    <img src="{{ page.banner_image }}" alt="{{ page.title }} banner image">
-  </section>
-  {% endif %}
-  
   <article class="writings-article">
     <!-- Article header -->
     <header class="writings-header">
@@ -20,58 +12,11 @@ layout: default
       {% if page.date %}
       <time class="writings-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
       {% endif %}
-      {% if page.author %}
-      <div class="writings-author">By {{ page.author }}</div>
-      {% endif %}
     </header>
     
     <!-- Main content -->
     <div class="writings-content">
       {{ content }}
     </div>
-    
-    <!-- Optional footer content -->
-    {% if page.footnotes or page.references %}
-    <footer class="writings-footer">
-      {% if page.footnotes %}
-      <section class="writings-footnotes">
-        <h3 class="writings-section-title">Footnotes</h3>
-        <ol class="writings-footnotes-list">
-          {% for footnote in page.footnotes %}
-          <li id="footnote-{{ forloop.index }}" class="writings-footnote">{{ footnote }}</li>
-          {% endfor %}
-        </ol>
-      </section>
-      {% endif %}
-      
-      {% if page.references %}
-      <section class="writings-references">
-        <h3 class="writings-section-title">References</h3>
-        <ul class="writings-references-list">
-          {% for reference in page.references %}
-          <li class="writings-reference">{{ reference }}</li>
-          {% endfor %}
-        </ul>
-      </section>
-      {% endif %}
-    </footer>
-    {% endif %}
-    
-    <!-- Related content or navigation -->
-    {% if page.related_writings %}
-    <aside class="writings-related">
-      <h3 class="writings-section-title">Related Writings</h3>
-      <ul class="writings-related-list">
-        {% for writing in page.related_writings %}
-        <li class="writings-related-item">
-          <a href="{{ writing.url }}" class="writings-related-link">{{ writing.title }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-    </aside>
-    {% endif %}
   </article>
 </main>
-
-<!-- Custom JavaScript for this page -->
-<script src="{{ '/assets/js/writings.js' | relative_url }}"></script>
