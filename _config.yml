@@ -4,11 +4,10 @@
 # Modify these settings to customize your portfolio website
 
 # Site settings
-title: "Isamu Thung" # Your name or the title of your portfolio
+title: "Isamu" # Your name or the title of your portfolio
 email: "isamuthung@gmail.com" # Your email address
 description: >- # This means to ignore newlines until the next key
-  A portfolio website showcasing my work, writings, and projects.
-  Built with Jekyll and hosted on GitHub Pages.
+Isamu Thung Website
 baseurl: "" # The subpath of your site, e.g. /blog (Check if this is correct for GitHub Pages)
 url: "https://isamuthung.com" # The base hostname & protocol for your site, e.g. http://example.com
 
@@ -23,10 +22,6 @@ collections:
     output: true
     permalink: /writings/:path/
   
-  journal:
-    output: true
-    permalink: /journal/:path/
-
   projects:
     output: true
     permalink: /projects/:path/
@@ -38,12 +33,6 @@ defaults:
       type: "writings"
     values:
       layout: "writings"
-
-  - scope:
-      path: ""
-      type: "journal"
-    values:
-      layout: "journal"
 
   - scope:
       path: ""
