@@ -17,16 +17,11 @@
     
     <!-- Stylesheets --> 
     <link rel="stylesheet" href="{{ '/assets/css/default.css' | relative_url }}">
-    
+    <link rel="stylesheet" href="{{ '/assets/css/textpage.css' | relative_url }}">
+
     <!-- Favicon -->
     <link rel="icon" href="{{ '/assets/images/favicon.png' | relative_url }}" type="image/x-icon">
-    
-    <!-- Additional custom head content -->
-    {% if page.custom_css %}
-        {% for stylesheet in page.custom_css %}
-        <link rel="stylesheet" href="{{ '/assets/css/' | append: stylesheet | append: '.css' | relative_url }}">
-        {% endfor %}
-    {% endif %}
+
 
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZB2M38HXQ0"></script>
@@ -91,11 +86,7 @@
     
     <!-- Scripts -->
     <script src="{{ '/assets/js/default.js' | relative_url }}"></script>
-
-    {% if page.custom_js %}
-        {% for js_file in page.custom_js %}
-        <script src="{{ '/assets/js/' | append: js_file | append: '.js' | relative_url }}"></script>
-        {% endfor %}
-    {% endif %}
+    <script src="{{ '/assets/js/textpage.js' | relative_url }}"></script>
+ 
 </body>
 </html>
