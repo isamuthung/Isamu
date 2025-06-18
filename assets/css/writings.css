@@ -33,13 +33,15 @@
 
 /* Content section */
 .writings-content {
-    padding: 10px 200px 120px;
+    padding: 80px 200px 120px; /* Increased top padding to push content further down */
+    margin-left: 40px; /* Add left margin to match sidebar spacing */
 }
 
 .writings-heading {
-    font-size: 3.5rem;
+    font-size: 3.5rem; /* Back to original larger size */
     font-weight: 300;
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Keep the good spacing */
+    margin-top: 0; /* Ensure no extra top margin */
     font-family: 'Playfair Display', serif;
 }
 
@@ -49,42 +51,62 @@
 }
 
 .writings-list li {
-    margin-bottom: 14px; /* Reduced from 24px to make items closer */
+    margin-bottom: 8px; /* Reduced from 14px for tighter spacing */
     position: relative;
-    padding-left: 16px; /* Reduced padding */
+    padding-left: 0; /* Remove padding since we're removing bullets */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+.writings-list li.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Remove bullet points */
 .writings-list li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #333;
-    font-size: 0.8rem; /* Smaller bullet */
+    display: none;
 }
 
 .writings-list a {
     color: #333;
-    text-decoration: none;
-    font-size: 1rem; /* Reduced font size from 1.25rem */
+    text-decoration: underline; /* Add underline to all links */
+    font-size: 1rem;
     transition: color 0.3s ease;
+    line-height: 1.4; /* Tighter line height for compact look */
 }
 
 .writings-list a:hover {
-    color: #888;
+    color: #666;
+}
+
+/* Make visited links purple */
+.writings-list a:visited {
+    color: #6b46c1; /* Purple color for visited links */
+}
+
+.writings-list a:visited:hover {
+    color: #553c9a; /* Darker purple on hover for visited links */
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .writings-content {
-        padding: 40px 40px 80px;
+        padding: 60px 40px 80px; /* Increased top padding on mobile too */
+        margin-left: 20px; /* Reduce left margin on mobile */
     }
     
     .writings-heading {
-        font-size: 2.5rem;
-        margin-bottom: 40px;
+        font-size: 2.5rem; /* Keep it proportionally large on mobile */
+        margin-bottom: 25px;
     }
     
     .writings-list a {
         font-size: 0.9rem;
+    }
+    
+    .writings-list li {
+        margin-bottom: 6px; /* Even tighter on mobile */
     }
 }
