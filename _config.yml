@@ -4,10 +4,9 @@
 # Modify these settings to customize your portfolio website
 
 # Site settings
-title: "Isamu" # Your name or the title of your portfolio
-email: "isamuthung@gmail.com" # Your email address
+title: "" # Your name or the title of your portfolio
+email: "" # Your email address
 description: >- # This means to ignore newlines until the next key
-Isamu Thung Website
 baseurl: "" # The subpath of your site, e.g. /blog (Check if this is correct for GitHub Pages)
 url: "https://isamuthung.com" # The base hostname & protocol for your site, e.g. http://example.com
 
