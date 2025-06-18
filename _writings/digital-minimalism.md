@@ -1,111 +1,20 @@
 ---
 layout: writings
-title: "Digital Minimalism: Designing for Focus in an Age of Distraction"
-subtitle: "Applying minimalist principles to create more meaningful digital experiences"
-date: 2025-03-15
-author: "Isamu"
-banner_image: "/assets/images/writings-banner.jpg"
-footnotes:
-  - "The term 'digital minimalism' was popularized by Cal Newport in his 2019 book 'Digital Minimalism: Choosing a Focused Life in a Noisy World.'"
-  - "Research by Gloria Mark at the University of California, Irvine found that it takes an average of 23 minutes and 15 seconds to regain deep focus after an interruption."
-  - "Apple's Screen Time feature was introduced in iOS 12 (2018) as part of a growing industry awareness about digital wellbeing."
-references:
-  - "Newport, C. (2019). Digital Minimalism: Choosing a Focused Life in a Noisy World. Portfolio."
-  - "Maeda, J. (2006). The Laws of Simplicity. MIT Press."
-  - "Colborne, G. (2010). Simple and Usable Web, Mobile, and Interaction Design. New Riders."
-related_writings:
-  - title: "The Principles of Minimalist Design in Modern Architecture"
-    url: "/writings/minimalist-design"
-  - title: "Typography as a Cornerstone of Minimalist Aesthetics"
-    url: "/writings/typography-minimalist-aesthetics"
+title: "Finding Agency in Learning"
+subtitle: "How discovering authentic education transformed my perspective on school and my future"
+date: 2025-03-20
 ---
 
-## The Rise of Digital Clutter
+Whenever I've been asked about my plans for college, I've cursed myself knowing my enthusiastic response betrayed me: not only did I not want to go to college, I rebelled against the very premise of school. For years, I grudgingly conformed to what the curriculum expected me to learn, taming my curiosity as though it was bred in captivity. But by the end of middle school, one thing became apparent to me: schools suffocated my creativity by institutionalizing the innately human process of learning.
 
-As our digital lives have expanded, so too has the complexity of our virtual environments. Apps compete for our attention, notifications interrupt our thoughts, and information overload has become a defining challenge of the modern era. Digital minimalism<sup><a href="#footnote-1">1</a></sup> offers a thoughtful response to this proliferation of digital noise.
+With my hopes hanging low, I stepped into my 9th grade classroom—indifferent. However, nothing could've prepared me for what I would experience in that first week alone. From the moment I was greeted, I became immersed in a community brimming with agency and joy. Straight away my teachers made it clear that we held ownership over our own learning—something I'd never thought I'd hear in a school—and that we decided how to challenge ourselves. Beyond fostering a culture where our ideas mattered, my teacher trusted us to steer our growth, giving me a glimpse into a possibility for school I couldn't fathom before.
 
-<figure class="writings-image-container">
-  <img src="/assets/images/projects/digital-clutter.jpg" alt="Digital Clutter Illustration" class="writings-image">
-  <figcaption class="writings-image-caption">The typical user interfaces many of us navigate daily represent significant cognitive overhead.</figcaption>
-</figure>
+Our first project, Uncommon Message, centered around creating artworks that uplifted stories of underrepresented figures. After a particularly fruitful seminar on redlining in San Diego, I expressed my desire to explore similar topics at length, and promptly after, my Humanities teacher recommended I read Caste by Isabel Wilkerson—a gesture indicating his willingness to support each student where they're at. That book not only sparked my interest in academic literature, it shaped my perspectives on the interplay between systems and justice, becoming a source of inspiration for what I hope to create within education.
 
-### The Cost of Complexity
+Years later, standing in front of the teachers at a high school in Redwood City, my junior year internship was in its final stretch, culminating with a professional development I designed on the lasting impact of mentorship on students. When I first walked into the school, I saw a community fragmented by the effects of being overworked and understaffed: a reality that mirrors a startling number of public schools today. Teachers were spread thin, leaving little room to cultivate meaningful connections with their students, and despite my best efforts, no number of workshops would solve this disconnect overnight.
 
-The cognitive cost of digital complexity is substantial:
+To transform the whole system, the underlying structures that govern how people work and interact had to change, and under my mentor's guidance, I experienced a school from an administrator's point of view, giving me a deeper understanding of the hidden, yet essential processes that sustain the organization. I witnessed digital inefficiencies that could become leverage with the right expertise or neglected opportunities that could benefit everyone, except no one had the capacity to pursue amidst the ceaseless momentum of the day-to-day burdens.
 
-- **Fragmented attention**: Constant interruptions prevent deep work and focused thinking
-- **Decision fatigue**: Too many options exhaust our decision-making capacity
-- **Information anxiety**: The feeling that we can never catch up with the flow of information
-- **Decreased productivity**: Research shows that recovering from interruptions consumes significant time<sup><a href="#footnote-2">2</a></sup>
+But what surprised me most was systemic change doesn't require sweeping reforms or dismantling the old. I saw firsthand the ripple effects a single small adjustment could create. Despite being just an intern for a month, I noticed the lasting impressions I left on my mentor's colleagues and the close partnerships that grew from the conversations we shared. If I could spark meaningful shifts as one intern, imagine what a community of dedicated change-makers could achieve—not just within one school but across countless schools.
 
-## Principles of Digital Minimalism in Design
-
-### 1. Intentional Reduction
-
-The core of digital minimalism lies not in simply removing elements, but in the thoughtful curation of what remains. Each feature, notification, or piece of content should serve a specific, valuable purpose.
-
-### 2. Focus on Core Functionality
-
-Minimalist digital design emphasizes:
-
-- **Clear hierarchies**: What's most important should be most prominent
-- **Intuitive navigation**: Users should never feel lost
-- **Progressive disclosure**: Reveal complexity only when needed
-- **Meaningful defaults**: Smart presets that require minimal adjustment
-
-> "Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away." — Antoine de Saint-Exupéry
-
-### 3. Thoughtful Engagement Models
-
-Digital minimalism extends beyond visual design to how we structure interaction:
-
-1. **Batch processing**: Grouping similar tasks rather than handling interruptions as they arrive
-2. **Focused modes**: Creating environments optimized for specific activities
-3. **Friction by design**: Deliberately adding steps to activities that might otherwise become compulsive
-4. **Time-bounded usage**: Setting clear boundaries around digital engagement
-
-## Implementing Digital Minimalism
-
-### For Designers
-
-Designers creating digital products can embrace minimalism by:
-
-- Challenging every element: "Does this truly add value?"
-- Prioritizing content over interface
-- Using visual breathing room (whitespace) strategically
-- Creating clear visual hierarchies
-- Testing with users to identify unnecessary complexity
-
-### For Users
-
-Individual users can apply digital minimalist principles through:
-
-- Regular digital decluttering sessions
-- Thoughtful notification management
-- Using built-in digital wellbeing tools<sup><a href="#footnote-3">3</a></sup>
-- Adopting single-purpose tools for important tasks
-- Creating physical and temporal boundaries around technology use
-
-<figure class="writings-image-container">
-  <img src="/assets/images/projects/minimal-workspace.jpg" alt="Minimal Digital Workspace" class="writings-image">
-  <figcaption class="writings-image-caption">A minimalist digital workspace focuses attention on the task at hand.</figcaption>
-</figure>
-
-## Case Study: Minimalist Apps
-
-A new generation of minimalist applications demonstrates these principles in action. Writing apps like iA Writer and Ulysses remove formatting options to keep writers focused on words. Task managers like Things and Todoist emphasize clarity and simplicity over feature-richness.
-
-## The Future of Digital Minimalism
-
-As digital overwhelm becomes increasingly recognized as a significant challenge, we can expect to see:
-
-- Greater emphasis on focus-enhancing designs
-- More sophisticated digital wellbeing tools
-- Increased user demand for simpler, more intentional experiences
-- New business models that don't depend on maximizing engagement
-
-## Conclusion
-
-Digital minimalism offers not just an aesthetic approach but a philosophy for creating more meaningful relationships with technology. By thoughtfully reducing complexity and focusing on what truly matters, we can design digital experiences that enhance human capability rather than overwhelming it.
-
-In a world of infinite possibilities, the deliberate choice to limit options may be the key to reclaiming our attention and using technology in ways that truly enrich our lives.
+I've come to realize that visions aren't actualized alone. The power to transform education lies in the agency of others. Although in structure, college is no longer a limitation as I once saw it; instead, it's the next step in forging connections with those who are equally committed to reshaping what schools can be. My fierce conviction to bring transformative learning to anyone has defined my journey thus far but I know it's only the beginning. Aspirations thrive in creative cultures, and higher education, with its ability to unite young people with a shared purpose is where I believe my vision will truly flourish.
