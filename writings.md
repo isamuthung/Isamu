@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: textpage
 title: Writings
 permalink: /writings/
 custom_css: ["writings"]
