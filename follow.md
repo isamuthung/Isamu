@@ -1,8 +1,10 @@
 ---
 layout: default
+title: Follow
 permalink: /follow/
+custom_css: ["follow"]
+custom_js: ["follow"]
 ---
-<link rel="stylesheet" href="{{ '/assets/css/follow.css' | relative_url }}">
 <div class="follow-me-wrapper">
   <div class="social-icons">
   <a href="https://www.linkedin.com/in/isamu-thung-55429b288/" class="social-icon linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
@@ -33,4 +35,3 @@ permalink: /follow/
   </a>
 </div>
 </div>
-<script src="{{ '/assets/js/follow.js' | relative_url }}"></script>
