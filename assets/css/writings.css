@@ -46,7 +46,7 @@
 }
 
 .writings-list {
-    list-style: none;
+    list-style: disc;
     max-width: 900px;
 }
 
