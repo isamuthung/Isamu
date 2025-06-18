@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: textpage
 title: "CommonApp Essay"
 subtitle: "How discovering authentic education transformed my perspective on school and my future"
 date: 2025-03-20
