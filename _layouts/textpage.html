@@ -17,18 +17,14 @@
     
     <!-- Stylesheets --> 
     <link rel="stylesheet" href="{{ '/assets/css/textpage.css' | relative_url }}">
-
     <!-- Favicon -->
     <link rel="icon" href="{{ '/assets/images/favicon.png' | relative_url }}" type="image/x-icon">
-
-
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZB2M38HXQ0"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-ZB2M38HXQ0');
 </script>
     
@@ -43,7 +39,6 @@
         </div>
     </div>
     
-
       <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
         <ul class="nav-links">
@@ -80,7 +75,25 @@
    
     <!-- Main Content -->
     <main class="main-content">
-        {{ content }}
+        <!-- Page Header with Jekyll metadata -->
+        {% if page.title %}
+        <header class="page-header">
+            <h1 class="page-title">{{ page.title }}</h1>
+            {% if page.subtitle %}
+            <p class="page-subtitle">{{ page.subtitle }}</p>
+            {% endif %}
+            {% if page.date %}
+            <time class="page-date" datetime="{{ page.date | date: '%Y-%m-%d' }}">
+                {{ page.date | date: '%B %d, %Y' }}
+            </time>
+            {% endif %}
+        </header>
+        {% endif %}
+        
+        <!-- Page Content -->
+        <div class="page-content">
+            {{ content }}
+        </div>
     </main>
     
     <!-- Scripts -->
