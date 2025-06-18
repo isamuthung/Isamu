@@ -3,6 +3,7 @@ layout: default
 custom_css: ["textpage"]
 custom_js: ["textpage"]
 ---
+
 <main class="writings-main">
   <article class="writings-article">
     <!-- Article header -->
@@ -14,6 +15,14 @@ custom_js: ["textpage"]
       {% if page.date %}
       <time class="writings-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
       {% endif %}
+
+         <!-- Additional custom head content -->
+    {% if page.custom_css %}
+        {% for stylesheet in page.custom_css %}
+        <link rel="stylesheet" href="{{ '/assets/css/' | append: stylesheet | append: '.css' | relative_url }}">
+        {% endfor %}
+    {% endif %}
+
     </header>
     
     <!-- Main content -->
