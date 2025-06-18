@@ -375,8 +375,9 @@
     font-size: 16px;
     line-height: 1.75;
     color: #2c2c2c;
-    hyphens: auto;
-    word-wrap: break-word;
+    hyphens: none;
+    word-wrap: normal;
+    word-break: normal;
 }
 
 .page-content p:first-child {
