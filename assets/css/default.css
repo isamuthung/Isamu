@@ -1,4 +1,4 @@
-  /* Reset any inherited margins/padding */
+        /* Reset any inherited margins/padding */
         * {
             margin: 0;
             padding: 0;
@@ -11,6 +11,16 @@
             padding: 0;
             overflow-x: hidden;
         }
+
+        body.scroll-locked {
+    overflow: hidden !important;
+}
+
+.scroll-locked main {
+    overflow: hidden !important;
+    height: 100vh; /* prevent content expansion during animation */
+}
+
 
         /* Fix for nested main */
         .main-content > main {
@@ -29,29 +39,16 @@
             overflow: hidden;
         }
 
-        /* Only animate main content, not sidebar */
+        /* Prevent initial flash - keep main visible but animate items */
         main {
-            opacity: 0;
-            animation: fadeInPage 0.5s ease-out 0.1s forwards;
+            opacity: 1;
         }
 
-        /* Page fade-in animation for main content only */
-        @keyframes fadeInPage {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Staggered fade-in for portfolio items */
+        /* Staggered fade-in for portfolio items - FIXED VERSION */
         @keyframes fadeInItem {
             from {
                 opacity: 0;
-                transform: translateY(30px) scale(0.95);
+                transform: translateY(20px) scale(0.98);
             }
             to {
                 opacity: 1;
@@ -94,7 +91,6 @@
             background-color: var(--primary-bg-color);
             z-index: 1000;
             transition: width var(--transition-speed) ease;
-            /* Remove the fade-in animation to keep it static */
         }
 
         .sidebar-toggle {
@@ -310,7 +306,6 @@
             }
         }
 
-        /* Mobile breakpoint - make sidebar narrower and adjust text */
         @media (max-width: 768px) {
             .sidebar {
                 width: calc(75vw - var(--sidebar-width));
@@ -323,7 +318,6 @@
                 line-height: 1.25;
             }
 
-            /* Keep navigation links the same size */
             .nav-links a {
                 font-size: 1.2rem;
             }
